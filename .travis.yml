@@ -22,8 +22,5 @@ install:
   - yarn
   - npm run webpack
 
-jobs:
-  include:
-    - stage: E2E bundle.web.js Tests
-      script:
-        - $(npm bin)/cypress run
+script:
+  - $(npm bin)/cypress run
