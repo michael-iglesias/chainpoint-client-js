@@ -8,7 +8,8 @@
   "repository": "https://github.com/chainpoint/chainpoint-client-js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack": "webpack"
+    "webpack": "webpack",
+    "test:cypress": "./node_modules/.bin/cypress run"
   },
   "keywords": [],
   "devDependencies": {
@@ -17,7 +18,10 @@
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
     "babel-preset-es2015": "^6.24.1",
+    "cypress": "^2.1.0",
+    "geckodriver": "^1.10.0",
     "node-libs-browser": "^2.1.0",
+    "selenium-server-standalone-jar": "^3.9.1",
     "uglifyjs-webpack-plugin": "^1.2.0",
     "webpack": "^3.11"
   },

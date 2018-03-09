@@ -1,2 +1,4 @@
 node_modules/
 .vscode
+credentials.tar.gz
+service-account.json
