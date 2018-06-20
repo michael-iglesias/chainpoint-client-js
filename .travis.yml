@@ -25,5 +25,13 @@ install:
   - yarn
   - npm run webpack
 
-script:
-  - $(npm bin)/cypress run
+jobs:
+  include:
+    - stage: Deploy to Test bucket
+      script:
+        - gsutil cp -r dist index.html gs://chainpoint-client-js-test
+        - gsutil acl ch -u AllUsers:R gs://chainpoint-client-js-test/index.html
+        - gsutil acl ch -u AllUsers:R gs://chainpoint-client-js-test/dist/bundle.web.js
+    - stage: Cypress E2E tests
+      script:
+        - $(npm bin)/cypress run
