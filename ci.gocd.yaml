@@ -1,0 +1,17 @@
+# simple.gocd.yaml
+pipelines:
+  chainpoint-client-js:
+    group: chainpoint
+    materials:
+      repo:  # this is the name of material
+        # says about type of material and url at once
+        git: https://github.com/michael-iglesias/chainpoint-client-js.git
+    stages:
+      - build: # name of stage
+          jobs:
+            job1:
+              environment_variables:
+                NODE_ENV: "development"
+              tasks:
+                - script:
+                    yarn install
